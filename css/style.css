@@ -1,0 +1,395 @@
+/* Reset e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #18181b; /* Escuro padrão */
+  color: #fff;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  background: #fff;
+  color: #23232b;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: #23232b;
+  color: #fff;
+  border-bottom: 1px solid #23232b;
+  border-top: 1px solid #23232b;
+  box-shadow: 0 2px 8px #0002;
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #3a4a5d;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  color: #5fa8d3;
+}
+
+#toggleTheme {
+  background: #e5e7ef;
+  color: #3a4a5d;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+#toggleTheme:hover {
+  background: #5fa8d3;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Hero */
+#hero {
+  background: #23232b;
+  color: #fff;
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #3a4a5d;
+}
+.highlight {
+  color: #fff;
+  background: #5fa8d3;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+/* Seções */
+.section {
+  padding: 2.5rem 0 1.5rem 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 0;
+  margin-bottom: 1.5rem;
+  box-shadow: none;
+  border: none;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: none;
+  border-bottom: 1px solid #23232b;
+  padding-bottom: 0.5rem;
+}
+
+/* Grid e Cards */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: #23232b;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #0004;
+  padding: 1.5rem 1.2rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #23232b;
+}
+.card:hover {
+  background: #18181b;
+  color: #fff;
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 8px 24px #5fa8d322;
+}
+
+/* Carrossel */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 2rem 0;
+  margin-bottom: 1.5rem;
+  border: none;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel .card {
+  min-width: 350px;
+  flex: 0 0 auto;
+  background: #23232b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #23232b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.carousel-wrapper:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+/* Botão do carrossel no tema claro */
+body.light-theme .carousel-btn {
+  background: #fff;
+  color: #23232b;
+}
+
+body.light-theme .carousel-btn:hover {
+  background: #23232b;
+  color: #fff;
+}
+
+/* Tags */
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tags li {
+  background: #23232b;
+  color: #fff;
+  border: 1px solid #23232b;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: none;
+  padding: 0.4rem 1.1rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-size: 0.98rem;
+}
+.tags li:hover {
+  background: #23232b;
+  color: #fff;
+  border: 1px solid #5fa8d3;
+  transform: scale(1.05);
+}
+
+/* No tema claro, mantenha o fundo da tag */
+body.light-theme .tags li:hover {
+  background: #23232b;
+  color: #fff;
+  border: 1.5px solid #5fa8d3;
+  /* Não deixa o fundo branco */
+}
+
+.tags li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: #23232b;
+  border-top: 1px solid #23232b;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 8px #0001;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .carousel .card, .card {
+    min-width: 200px;
+    max-width: 240px;
+    padding: 1rem 0.7rem;
+  }
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel .card, .card {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 0.7rem 0.5rem;
+  }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Textos das seções */
+.section p {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  text-align: center;
+}
+
+.section ul {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  padding-left: 1.5rem;
+}
+
+.section ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Letras brancas no tema escuro, pretas no tema claro */
+body, header, footer, .section, .section-title, .card, .carousel .card, .tags li, nav a, .carousel-btn {
+  color: #fff;
+}
+
+body.light-theme,
+body.light-theme header,
+body.light-theme footer,
+body.light-theme .section,
+body.light-theme .section-title,
+body.light-theme .card,
+body.light-theme .carousel .card,
+body.light-theme .tags li,
+body.light-theme nav a,
+body.light-theme .carousel-btn {
+  color: #23232b;
+}
+
+body.light-theme .card,
+body.light-theme .carousel .card,
+body.light-theme .card * ,
+body.light-theme .carousel .card * {
+  color: #fff !important;
+}
+
+body.light-theme .tags li {
+  color: #fff !important;
+}
+
+body.light-theme nav a {
+  color: #fff !important;
+}
