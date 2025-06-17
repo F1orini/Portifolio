@@ -12,6 +12,14 @@
   <header>
     <div class="container header-container">
       <h1><i class="lucide lucide-terminal"></i> Eduardo Fiorini</h1>
+      <div class="header-actions">
+        <button id="toggleTheme" aria-label="Alternar tema"><i class="lucide lucide-moon"></i></button>
+        <button id="menuToggle" aria-label="Abrir menu" class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <nav>
         <a href="#sobre"><i class="lucide lucide-user"></i> Sobre</a>
         <a href="#experiencias"><i class="lucide lucide-briefcase"></i> Experiências</a>
@@ -19,7 +27,6 @@
         <a href="#habilidades"><i class="lucide lucide-cpu"></i> Habilidades</a>
         <a href="#contato"><i class="lucide lucide-mail"></i> Contato</a>
       </nav>
-      <button id="toggleTheme"></button>
     </div>
   </header>
 
@@ -128,6 +135,13 @@
     updateThemeIcon();
   });
   updateThemeIcon();
+</script>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('nav');
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
 </script>
 </body>
 </html>

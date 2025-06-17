@@ -19,3 +19,24 @@ if (!document.documentElement.hasAttribute('data-theme')) {
   rightBtn.onclick = () => {
     carousel.scrollBy({ left: 400, behavior: 'smooth' });
   };
+
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.querySelector('nav');
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+const toggleBtn = document.getElementById('toggleTheme');
+
+function updateThemeIcon() {
+  toggleBtn.innerHTML = document.body.classList.contains('light-theme')
+    ? '<i class="lucide lucide-moon"></i>'   // Lua no tema claro
+    : '<i class="lucide lucide-sun"></i>';   // Sol no tema escuro
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  updateThemeIcon();
+});
+
+updateThemeIcon();
