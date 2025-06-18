@@ -329,6 +329,31 @@ body.light-theme .carousel-btn:hover {
   color: #fff;
 }
 
+/* Experiências: botões do carrossel */
+#carouselExperienciasWrapper {
+  position: relative;
+}
+
+#carouselExperienciasWrapper .carousel-btn.exp-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#carouselExperienciasWrapper .carousel-btn.exp-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#carouselExperienciasWrapper .carousel {
+  margin: 0 48px; /* espaço para os botões não cobrirem o conteúdo */
+}
+
 /* Tags */
 .tags {
   list-style: none;
