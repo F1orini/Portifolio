@@ -7,13 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container header-container">
       <h1><i class="lucide lucide-terminal"></i> Eduardo Fiorini</h1>
       <div class="header-actions">
-        <button id="toggleTheme" aria-label="Alternar tema"><i class="lucide lucide-moon"></i></button>
+        <button id="toggleTheme" aria-label="Alternar tema"><img src="img/sun.svg" alt="sun"></button>
         <button id="menuToggle" aria-label="Abrir menu" class="menu-toggle">
           <span></span>
           <span></span>
@@ -123,25 +133,5 @@
   </footer>
 
   <script src="js/script.js"></script>
-  <script>
-  const toggleBtn = document.getElementById('toggleTheme');
-  function updateThemeIcon() {
-    toggleBtn.innerHTML = document.body.classList.contains('light-theme')
-      ? '🌞' // Sol no modo claro
-      : '🌙'; // Lua no modo escuro
-  }
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    updateThemeIcon();
-  });
-  updateThemeIcon();
-</script>
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const nav = document.querySelector('nav');
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-</script>
 </body>
 </html>
